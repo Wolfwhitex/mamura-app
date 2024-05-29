@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pembayaran - Kode Virtual Account</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+    body {
+    font-family: sans-serif;
+    background: linear-gradient(135deg, #00204a, #00507a);
+}
+
+.container {
+    width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+}
+
+h2 {
+    color: white;
+}
+
+.payment-info {
+    margin-bottom: 20px;
+}
+
+.va-code {
+    font-size: 24px;
+    font-weight: bold;
+    color: #007bff;
+    text-align: center;
+}
+
+.upload-proof {
+    margin-bottom: 20px;
+}
+
+.upload-proof input[type="file"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.upload-proof .btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.upload-proof .btn:hover {
+    background-color: #0056b3;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pembayaran - Kode Virtual Account</h1>
+
+        <div class="payment-info">
+            <h2>Kode Virtual Account</h2>
+            <p class="va-code">BANK BCA - 123456789</p>
+        </div>
+
+        <div class="upload-proof">
+            <h2>Upload Bukti Pembayaran</h2>
+            <form action="" method="post" enctype="multipart/form-data">
+                <input type="file" name="proof" id="proofFile" accept="image/*">
+                <label for="proofFile"></label>
+                <p>
+
+                </p>
+                <br>
+                <button type="submit" class="btn btn-primary">Upload Bukti</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

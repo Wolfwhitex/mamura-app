@@ -259,6 +259,7 @@ a:focus {
           align-items: center;
   position: relative;
   padding: 45px 0 145px 0;
+  align-items: center;
 }
 
 .slider_section .row {
@@ -274,6 +275,7 @@ a:focus {
 
 .slider_section .detail-box {
   color: #00204a;
+  align-content: center;
 }
 
 .slider_section .detail-box h1 {
@@ -286,7 +288,7 @@ a:focus {
 
 .slider_section .detail-box p {
   color: #fefefe;
-  font-size: 14px;
+  font-size: 20px;
 }
 
 .slider_section .detail-box .btn-box {
@@ -482,9 +484,10 @@ a:focus {
   background-color: #007fa4;
 }
 
+/* tentang kami section */
 .about_section {
-  background-color: #00204a;
-  color: #ffffff;
+  background-color: #ffffff;
+  color: #00204a;
 }
 
 .about_section .heading_container {
@@ -525,6 +528,55 @@ a:focus {
   background-color: #007fa4;
 }
 
+/* tentang kami end section */
+
+/* Mitra section */
+.mitra_section {
+  background-color: #00204a;
+  color: #ffffff;
+}
+
+.mitra_section .heading_container {
+  margin-bottom: 45px;
+}
+
+.mitra_section .row {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.mitra_section .img-box img {
+  max-width: 100%;
+}
+
+.mitra_section .detail-box h3 {
+  font-weight: bold;
+}
+
+.mitra_section .detail-box p {
+  margin-top: 15px;
+}
+
+.mitra_section .detail-box a {
+  display: inline-block;
+  padding: 10px 45px;
+  background-color: #00bbf0;
+  color: #ffffff;
+  border-radius: 0px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  border: none;
+  margin-top: 15px;
+}
+
+.mitra_section .detail-box a:hover {
+  background-color: #007fa4;
+}
+
+/* Mitra end section */
+
+/* why section */
 .why_section .box {
   margin-top: 45px;
   display: -webkit-box;
@@ -598,6 +650,70 @@ a:focus {
 .why_section .btn-box a:hover {
   background-color: #007fa4;
 }
+/*end why section */
+
+/*join section */
+.join_section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #00204a;
+  color: #ffffff;
+}
+
+.join_section h2 {
+  position: relative;
+  margin: 0;
+}
+
+.join_section .heading_container {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.join_container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.join_section .join_container {
+  padding: 0 15px;
+}
+
+.join_section .join_container .box {
+  padding: 35px 0 0 0;
+  border-radius: 5px;
+  overflow: hidden;
+  -webkit-transition: all .1s;
+  transition: all .1s;
+  margin-top: 45px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#002759), to(#002b64));
+  background: linear-gradient(to bottom, #002759, #002b64);
+}
+
+.join_section .btn-box {
+  margin-top: 90px;
+}
+
+.join_section .btn-box a {
+  display: inline-block;
+  padding: 10px 45px;
+  background-color: #00bbf0;
+  color: #ffffff;
+  border-radius: 0;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  border: none;
+}
+
+.join_section .btn-box a:hover {
+  background-color: #007fa4;
+}
+
+/*end join section */
 
 /*team section */
 .team_section {
@@ -628,6 +744,7 @@ a:focus {
 }
 
 .team_section .team_container .box .img-box {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -675,6 +792,7 @@ a:focus {
 }
 
 /*team section end*/
+
 /* client section start */
 .client_section .heading_container {
   margin-bottom: 30px;
@@ -774,10 +892,28 @@ a:focus {
 }
 
 /* client section end */
-.info_section {
-  background-color: #00204a;
+.mamura-title {
+  font-size: 36px;
+  font-weight: bold;
   color: #ffffff;
-  padding: 45px 0 15px 0;
+  text-align: center;
+}
+
+.vertical-line {
+  width: 4px;
+  height: 100px;
+  background-color: #ffffff;
+  margin: auto;
+}
+
+.info_section {
+  background: linear-gradient(135deg, #00204a, #00507a);
+  color: #ffffff;
+  padding: 50px 0;
+}
+
+.info_contact h4, .info_link_box h4 {
+  margin-bottom: 20px;
 }
 
 .info_section h4 {
@@ -787,6 +923,36 @@ a:focus {
 
 .info_section .info_col {
   margin-bottom: 30px;
+}
+
+.contact_link_box a {
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  margin-bottom: 10px;
+  text-decoration: none;
+}
+
+.contact_link_box a i {
+  margin-right: 10px;
+}
+
+.info_links a {
+  display: block;
+  margin-bottom: 10px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.info_links a.active {
+  font-weight: bold;
+}
+
+.info_section .row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* Adjust the gap between columns if needed */
 }
 
 .info_section .info_contact .contact_link_box {
@@ -928,3 +1094,128 @@ a:focus {
   color: inherit;
 }
 /*# sourceMappingURL=style.css.map */
+
+/* customer page section */
+.cp_section {
+  background-color: #ffffff;
+  color: #00204a;
+}
+
+.cp_section .heading_container {
+  margin-bottom: 45px;
+}
+
+.cp_section .row {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.cp_section .img-box img {
+  max-width: 100%;
+}
+
+.cp_section .detail-box h3 {
+  font-weight: bold;
+}
+
+.cp_section .detail-box p {
+  margin-top: 15px;
+}
+
+.cp_section .detail-box a {
+  display: inline-block;
+  padding: 10px 45px;
+  background-color: #00bbf0;
+  color: #ffffff;
+  border-radius: 0px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  border: none;
+  margin-top: 15px;
+}
+
+.cp_section .detail-box a:hover {
+  background-color: #007fa4;
+}
+/* end customer page section */
+
+/*restoran terdekat section */
+.resto_section .box {
+  margin-top: 45px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.resto_section .heading_container {
+  margin-bottom: 45px;
+}
+
+.resto .box .img-box {
+  margin-bottom: 20px;
+  width: 120px;
+  height: 120px;
+  min-width: 120px;
+  min-height: 120px;
+  border-radius: 100%;
+  border: 5px solid #00204a;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.resto_section .box .img-box img {
+  width: 55px;
+  height: auto;
+  fill: #00204a;
+}
+
+.resto_section .box h2 {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.resto_section .box p {
+  margin-bottom: 45px;
+}
+
+.resto_section .btn-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 45px;
+}
+
+.resto_section .btn-box a {
+  display: inline-block;
+  padding: 10px 45px;
+  background-color: #00bbf0;
+  color: #ffffff;
+  border-radius: 0;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  border: none;
+}
+
+.restoran_section .btn-box a:hover {
+  background-color: #007fa4;
+}
+/*end restoran terdekat section */
