@@ -3,33 +3,22 @@
 @section('content')
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile - My Orders</title>
-    <link rel="stylesheet" href="style.css">
-
     <style>
 body {
     font-family: sans-serif;
-}
-
-.container {
-    width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    color: white;
-}
-
-h1 {
-    text-align: center;
-}
-
-.profile-info {
-    margin-bottom: 20px;
+    background-color: white; /* Background warna putih */
 }
 
 .order-history {
-    margin-top: 20px;
+    margin: 20px auto;
+    width: 600px;
+    background-color: #f5f5f5; /* Warna latar belakang untuk order history */
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.order-history h2 {
+    margin-bottom: 10px;
 }
 
 .order-history ul {
@@ -39,16 +28,27 @@ h1 {
 
 .order-history li {
     margin-bottom: 10px;
-    border: 1px solid #ccc;
-    padding: 10px;
-    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
 }
 
-.order-history li:hover {
-    background-color: #f5f5f5;
+.product-name,
+.product-quantity,
+.product-price {
+    flex: 1;
+    text-align: left;
 }
+
+.order-total {
+    font-weight: bold;
+    text-align: right;
+}
+
     </style>
+
 </head>
+
+
 
 <body class="sub_page">
     <div class="hero_area">
@@ -58,28 +58,28 @@ h1 {
             <img src="{{ asset('images/hero-bg.png') }}" alt="">
           </div>
         </div>
-    
 
-    <div class="container">
-        <h1>Profil Saya</h1>
 
-        <div class="profile-info">
-            <p>Nama: <span id="customerName"></span></p>
-            <p>Email: <span id="customerEmail"></span></p>
-            <p>Nomor Telepon: <span id="customerPhone"></span></p>
-        </div>
+    <h2 style="text-align: center; margin-top: 9px; color: white">Detail Pembelian</h2>
 
-        <h2>Riwayat Pesanan</h2>
-        <div class="order-history"> 
-            
-          <a a class="navbar-brand" href="{{ url('/histori') }}">Pesanan #1 (2024-05-29)</a>
-            <ul id="orderList">
-                </ul>
-              </a>
-        </div>
+    <div class="order-history">
+        <h2>Pesanan #1 (2024-05-29)</h2>
+        <ul>
+            <li>
+                <span class="product-name">Nasi Goreng</span>
+                <span class="product-quantity">x1</span>
+                <span class="product-price">Rp. 6.000</span>
+            </li>
+            <li>
+                <span class="product-name">Es Teh</span>
+                <span class="product-quantity">x2</span>
+                <span class="product-price">Rp. 4.000</span>
+            </li>
+        </ul>
+        <p class="order-total">Total: Rp. 10.000</p>
+        <br>
     </div>
 
-    
    <!-- info section -->
 
    <section class="info_section layout_padding2">
@@ -135,3 +135,4 @@ h1 {
   @endsection
 
 </body>
+
