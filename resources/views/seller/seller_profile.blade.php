@@ -143,6 +143,7 @@
     @if(Auth::guard('seller')->check())
         <p>Nama: {{ Auth::user()->name }}</p>
         <p>Email: {{ Auth::user()->email }}</p>
+        <p>No Telepon: {{ Auth::user()->NoTelp }}</p>
     @endif
 </div>
 

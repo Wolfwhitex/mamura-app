@@ -30,13 +30,22 @@
 
         .register-container input[type="text"],
         .register-container input[type="email"],
-        .register-container input[type="password"] {
+        .register-container input[type="password"],
+        .register-container input[type="NoTelp"] {
             width: 100%;
             padding: 10px;
             margin: 10px 0;
             border: 1px solid #ccc;
             border-radius: 4px;
             box-sizing: border-box;
+        }
+
+        .register-container input[type="text"]:focus,
+        .register-container input[type="email"]:focus,
+        .register-container input[type="password"]:focus,
+        .register-container input[type="NoTelp"]:focus {
+            outline: none;
+            border-color: #00bbf0;
         }
 
         .register-container button {
@@ -76,18 +85,20 @@
     </style>
 </head>
 <body>
-    <div class="register-container">
+<div class="register-container">
     <h1>Welcome to Mamura</h1>
-        <form id="registerForm" method="POST" action="{{ url('/seller/register') }}">
-            @csrf <!-- Token CSRF Laravel untuk keamanan -->
-            <input type="text" id="name" name="name" placeholder="Name" required>
-            <input type="email" id="email" name="email" placeholder="Email" required>
-            <input type="password" id="password" name="password" placeholder="Password" required>
-            <input type="password" id="password_confirmation" name="password_confirmation" placeholder="Confirm Password" required>
-            <div id="error-message" class="error"></div>
-            <button type="submit">Register</button>
-        </form>
-        <p>Sudah punya akun? <a href="{{ url('/loginseller') }}">Login</a></p>
-    </div>
+    <form id="registerForm" method="POST" action="{{ url('/seller/register') }}">
+        @csrf <!-- Token CSRF Laravel untuk keamanan -->
+        <input type="text" id="name" name="name" placeholder="Name" required>
+        <input type="email" id="email" name="email" placeholder="Email" required>
+        <input type="NoTelp" id="NoTelp" name="NoTelp" placeholder="Phone Number" required>
+        <input type="password" id="password" name="password" placeholder="Password" required>
+        <input type="password" id="password_confirmation" name="password_confirmation" placeholder="Confirm Password" required>
+        <div id="error-message" class="error"></div>
+        <button type="submit">Register</button>
+    </form>
+    <p>Sudah punya akun? <a href="{{ url('/loginseller') }}">Login</a></p>
+</div>
+
 </body>
 </html>

@@ -16,6 +16,7 @@ class Seller extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'NoTelp',
         'password',
     ];
 

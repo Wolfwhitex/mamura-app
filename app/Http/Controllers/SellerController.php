@@ -15,6 +15,7 @@ class SellerController extends Controller
          $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:sellers',
+            'NoTelp'=>'required|string|max:20',
             'password' => 'required|string|min:8|confirmed',
         ]);
 
@@ -28,6 +29,7 @@ class SellerController extends Controller
         $seller = Seller::create([
             'name' => $request->name,
             'email' => $request->email,
+            'NoTelp' => $request->NoTelp,
             'password' => Hash::make($request->password),
         ]);
 
