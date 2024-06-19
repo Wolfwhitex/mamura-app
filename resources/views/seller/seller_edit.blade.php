@@ -76,39 +76,35 @@
 <body>
   <div class="edit-container">
     <h1>Edit Produk Makanan</h1>
-    <form id="editForm">
-      <input type="text" id="namaProduk" name="namaProduk" placeholder="Nama Produk" required>
-      <input type="text" id="harga" name="harga" placeholder="Harga (Rp)" required>
-      <textarea id="deskripsi" name="deskripsi" placeholder="Deskripsi"></textarea>
-      <input type="number" id="stok" name="stok" placeholder="Stok" required>
-      <input type="file" id="gambar" name="gambar" accept="image/*" required>
-      <button type="submit">Simpan</button>
-    </form>
+    <form action="{{ Route('products.update', $product->ProductID) }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            <div class="form-group">
+                <label for="Nama">Nama</label>
+                <input type="text" name="Nama" value="{{ $product->Nama }}" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="Deskripsi">Deskripsi</label>
+                <textarea name="Deskripsi" class="form-control">{{ $product->Deskripsi }}</textarea>
+            </div>
+            <div class="form-group">
+                <label for="Harga">Harga</label>
+                <input type="number" name="Harga" value="{{ $product->Harga }}" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="Stock">Stock</label>
+                <input type="number" name="Stock" value="{{ $product->Stock }}" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="FotoProduk">Foto Produk</label>
+                <input type="file" name="FotoProduk" class="form-control">
+                @if($product->FotoProduk)
+                    <img src="{{ asset($product->FotoProduk) }}" alt="Product Image" class="img-thumbnail" width="100">
+                @endif
+            </div>
+            <button type="submit" class="btn btn-primary">Update Product</button>
+        </form>
   </div>
 
-  <script>
-    document.getElementById('editForm').addEventListener('submit', function(event) {
-      event.preventDefault();
-
-      const namaProduk = document.getElementById('namaProduk').value;
-      const harga = document.getElementById('harga').value;
-      const deskripsi = document.getElementById('deskripsi').value;
-      const stok = document.getElementById('stok').value;
-      const gambar = document.getElementById('gambar').files[0]; // File gambar yang dipilih
-
-      // Simpan atau proses data sesuai kebutuhan Anda
-      console.log('Nama Produk:', namaProduk);
-      console.log('Harga:', harga);
-      console.log('Deskripsi:', deskripsi);
-      console.log('Stok:', stok);
-      console.log('Gambar:', gambar); // Contoh output: File object
-
-      // Lakukan proses simpan data atau pengiriman ke backend di sini
-
-      // Misalnya, untuk sementara hanya menampilkan pesan
-      alert('Data produk berhasil disimpan!');
-    });
-  </script>
 </body>
 
 </

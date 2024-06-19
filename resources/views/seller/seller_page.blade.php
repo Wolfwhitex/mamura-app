@@ -211,112 +211,20 @@
         </h2>
       </div>
       <div class="row">
-        <div class="col-sm-3 mb-3 mb-sm-0">
-          <div class="card">
-            <div class="card-body">
-              <img src="images/nasi.png" class="card-img-top" alt="Nasi & Mie">
-              <h5 class="card-title">Nasi & Mie</h5>
-              <p class="card-price">Rp 20.000</p>
-              <p class="card-description">Lezat dan mengenyangkan.</p>
-              <p class="card-stock">Stok: 10</p>
-              <a href="{{ url('/seller_edit') }}" class="btn btn-primary btn-sm">Edit</a>
-            </div>
-          </div>
-        </div>
-  
-        <div class="col-sm-3">
-          <div class="card">
-            <div class="card-body">
-              <img src="images/snack.webp" class="card-img-top" alt="Snack">
-              <h5 class="card-title">Snack</h5>
-              <p class="card-price">Rp 10.000</p>
-              <p class="card-description">Camilan ringan untuk segala suasana.</p>
-              <p class="card-stock">Stok: 15</p>
-              <a href="{{ url('/seller_edit') }}" class="btn btn-primary btn-sm">Edit</a>
-              {{-- <a href="edit.html?id=2" class="btn btn-primary btn-sm">Edit</a> --}}
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-sm-3">
-          <div class="card">
-            <div class="card-body">
-              <img src="images/dessert.png" class="card-img-top" alt="Dessert">
-              <h5 class="card-title">Dessert</h5>
-              <p class="card-price">Rp 15.000</p>
-              <p class="card-description">Manis dan menyegarkan.</p>
-              <p class="card-stock">Stok: 8</p>
-              <a href="{{ url('/seller_edit') }}" class="btn btn-primary btn-sm">Edit</a>
-              {{-- <a href="edit.html?id=3" class="btn btn-primary btn-sm">Edit</a> --}}
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-sm-3">
-          <div class="card">
-            <div class="card-body">
-              <img src="images/bakery.png" class="card-img-top" alt="Bakery & Pastery">
-              <h5 class="card-title">Bakery & Pastery</h5>
-              <p class="card-price">Rp 25.000</p>
-              <p class="card-description">Roti dan kue yang menggoda.</p>
-              <p class="card-stock">Stok: 12</p>
-              <a href="{{ url('/seller_edit') }}" class="btn btn-primary btn-sm">Edit</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="row mt-3">
-        <div class="col-sm-3">
-          <div class="card">
-            <div class="card-body">
-              <img src="images/daging.png" class="card-img-top" alt="Daging">
-              <h5 class="card-title">Daging</h5>
-              <p class="card-price">Rp 50.000</p>
-              <p class="card-description">Daging segar dan berkualitas.</p>
-              <p class="card-stock">Stok: 5</p>
-              <a href="{{ url('/seller_edit') }}" class="btn btn-primary btn-sm">Edit</a>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-sm-3">
-          <div class="card">
-            <div class="card-body">
-              <img src="images/ayam.png" class="card-img-top" alt="Ayam & Bebek">
-              <h5 class="card-title">Ayam & Bebek</h5>
-              <p class="card-price">Rp 35.000</p>
-              <p class="card-description">Ayam dan bebek yang lezat.</p>
-              <p class="card-stock">Stok: 20</p>
-              <a href="{{ url('/seller_edit') }}" class="btn btn-primary btn-sm">Edit</a>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-sm-3">
-          <div class="card">
-            <div class="card-body">
-              <img src="images/sayur.png" class="card-img-top" alt="Sayur">
-              <h5 class="card-title">Sayur</h5>
-              <p class="card-price">Rp 12.000</p>
-              <p class="card-description">Sayuran segar untuk kesehatan Anda.</p>
-              <p class="card-stock">Stok: 30</p>
-              <a href="{{ url('/seller_edit') }}" class="btn btn-primary btn-sm">Edit</a>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-sm-3">
-          <div class="card">
-            <div class="card-body">
-              <img src="images/beverages.png" class="card-img-top" alt="Beverages">
-              <h5 class="card-title">Beverages</h5>
-              <p class="card-price">Rp 8.000</p>
-              <p class="card-description">Minuman segar dan menyegarkan.</p>
-              <p class="card-stock">Stok: 25</p>
-              <a href="{{ url('/seller_edit') }}" class="btn btn-primary btn-sm">Edit</a>
-            </div>
-          </div>
+        @foreach($products as $product)
+                <div class="col-sm-3 mb-3 mb-sm-0">
+                    <div class="card">
+                        <div class="card-body">
+                            <img src="{{ asset($product->FotoProduk) }}" class="card-img-top" alt="{{ $product->Nama }}">
+                            <h5 class="card-title">{{ $product->Nama }}</h5>
+                            <p class="card-price">Rp {{ number_format($product->Harga, 0, ',', '.') }}</p>
+                            <p class="card-description">{{ $product->Deskripsi }}</p>
+                            <p class="card-stock">Stok: {{ $product->Stock }}</p>
+                            <a href="{{ route('products.edit', ['id' => $product->ProductID]) }}" class="btn btn-primary btn-sm">Edit</a>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
         </div>
       </div>
     </div>
@@ -344,12 +252,6 @@
           </div>
         </div>
       </div>
-      <div class="col-md-6 mb-4">
-        <div class="card border-info">
-          <div class="card-body p-4">
-            <h5 class="card-title">Edit Produk</h5>
-            <p class="card-text">Edit produk pada toko!</p>
-            <a href="{{ url('/seller_edit') }}" class="btn btn-info btn-sm">Edit Produk</a>
           </div>
         </div>
       </div>

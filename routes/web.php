@@ -5,6 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\SellerController;
 use App\Http\Controllers\GeneralController;
 use App\Http\Middleware\SellerMiddleware;
+use App\Http\Controllers\ProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -94,13 +95,17 @@ Route::get('/histori', function () {
 
 
 Route::middleware(['auth:seller'])->group(function () {
-    Route::get('/seller_page', function () {
-        return view('seller.seller_page');
-    });
+    Route::get('/seller_page', [ProductController::class, 'index']);
+    
 
-    Route::get('/seller_edit', function () {
-        return view('seller.seller_edit');
-    });
+    Route::get('/seller_edit', [ProductController::class, '']);
+
+    // Example of a route definition with a placeholder for product ID
+    Route::get('/seller/edit/{id}', [ProductController::class, 'edit'])->name('products.edit');
+
+
+// Route untuk menyimpan perubahan data produk
+   Route::post('/seller/update/{id}', [ProductController::class, 'update'])->name('products.update');
 
     Route::get('/seller_produk', function () {
         return view('seller.seller_produk');
@@ -119,6 +124,10 @@ Route::middleware(['auth:seller'])->group(function () {
     });
 
     Route::post('/logout', [SellerController::class,'logoutseller'])->name('logout');
+
+    Route::post('/products', [ProductController::class, 'store'])->name('products.store');
+    Route::get('/seller/products', [ProductController::class, 'index']);
+
 });
 
 
