@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\TemplateController;
+use App\Http\Controllers\GeneralController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -80,3 +80,34 @@ Route::get('/profile', function () {
 Route::get('/payment', function () {
     return view('payment');
 });
+
+Route::get('/seller_page', function () {
+    return view('seller.seller_page');
+});
+
+Route::get('/seller_edit', function () {
+    return view('seller.seller_edit');
+});
+
+Route::get('/seller_produk', function () {
+    return view('seller.seller_produk');
+});
+
+Route::get('/seller_transaksi', function () {
+    return view('seller.seller_transaksi');
+});
+
+Route::get('/history_transaksi', function () {
+    return view('seller.history_transaksi');
+});
+
+Route::get('/seller_profile', function () {
+    return view('seller.seller_profile');
+});
+// Route::get('home',  [TemplateController::class, 'homePage']);
+// Route::get('home/{logo}',  [TemplateController::class, 'homePage']);
+// Route::get('/homepage/{logo}', [TemplateController::class, 'homePage'])->name('homepage');
+
+Route::get('/home', [GeneralController::class, 'create'])->name('datatoko.create');
+Route::get('/menu', [GeneralController::class, 'kategoricreate'])->name('kategori.create');
+Route::get('/seller_profile', [GeneralController::class, 'sellercreate'])->name('seller.create');

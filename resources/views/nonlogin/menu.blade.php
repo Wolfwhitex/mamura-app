@@ -108,20 +108,25 @@
       <div class="row">
         <div class="col-sm-3 mb-3 mb-sm-0">
         <a class="navbar-brand" href="nasi.html">
+          @foreach($categories as $c)
           <div class="card">
+            
             <div class="card-body">
-                <img src="images/nasi.png" class="card-img-top" alt="...">
-              <h5 class="card-title">Nasi & Mie</h5>
+              <img src="{{ asset('public/images/' . $c->Foto) }}" alt="..">
+              {{-- <h5 class="card-title">Nasi & Mie</h5> --}}
+              <p>{{ $c->Nama}}</p>
             </div>
+            
           </div>
+          @endforeach
         </a>
         </div>
 
-        <div class="col-sm-3">
+         {{-- <div class="col-sm-3">
             <a class="navbar-brand" href="index.html">
           <div class="card">
             <div class="card-body">
-                <img src="images/snack.webp" class="card-img-top" alt="...">
+                 <img src="images/snack.webp" class="card-img-top" alt="...">
               <h5 class="card-title">Snack</h5>
             </div>
           </div>
@@ -147,7 +152,7 @@
             </div>
         </a>
           </div>
-      </div>
+      </div> --}}
       <div class="row justify-content-center">
           <div class="col-sm-3">
             <a class="navbar-brand" href="daftar.html">

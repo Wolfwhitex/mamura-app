@@ -141,25 +141,29 @@
       <div class="row">
         <div class="col-md-4 ">
           <div class="box">
+            @foreach($logo as $l)
             <div class="img-box">
-              <img src="{{ asset('images/mitra1.webp')}}" alt="">
+                   {{-- <option value="{{ $l->logo }}">{{ $l->logo }}</option> --}}
+                   <img src="{{ asset('public/images/' . $l->logo) }}" alt="Project Preview Screenshot">
+              {{-- <img src="{{ asset('images/mitra1.webp')}}" alt=""> --}}
           </div>
+          @endforeach
       </div>
     </div>
-    <div class="col-md-4 ">
+    {{-- <div class="col-md-4 ">
       <div class="box">
         <div class="img-box">
           <img src="{{ asset('images/mitra2.png') }}" alt="">
         </div>
     </div>
-  </div>
-  <div class="col-md-4 ">
+  </div> --}}
+  {{-- <div class="col-md-4 ">
     <div class="box">
       <div class="img-box">
         <img src="{{ asset('images/mitra3.png') }}" alt="">
       </div>
   </div>
-</div>
+</div> --}}
     </div>
   </div>
   </section>
