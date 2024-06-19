@@ -68,4 +68,5 @@ class UserController extends Controller
         // Jika autentikasi gagal, kirim pesan kesalahan
         return redirect('/loginuser')->withErrors(['email' => 'Email atau password salah.']);
     }
+    
 }

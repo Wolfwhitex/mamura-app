@@ -78,7 +78,7 @@
                 <a class="nav-link" href="{{ url('/team') }}">Team</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{{ url('/register') }}"> <i class="fa fa-user" aria-hidden="true"></i> Daftar</a>
+                <a class="nav-link" href="{{ url('/registeruser') }}"> <i class="fa fa-user" aria-hidden="true"></i> Daftar</a>
               </li>
               <form class="form-inline">
                 <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">

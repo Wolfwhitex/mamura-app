@@ -5,9 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class datatoko extends Model
+class Datatoko extends Model
 {
-    use HasFactory;
     protected $table = 'datatoko';
     protected $fillable = ['Nama_Toko','Alamat','Logo','SellerID'];
 

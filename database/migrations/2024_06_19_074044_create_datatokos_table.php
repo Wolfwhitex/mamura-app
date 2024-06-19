@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('datatokos', function (Blueprint $table) {
             $table->id();
+            $table->string('Nama_Toko');
+            $table->string('Alamat');
+            $table->string('Logo')->default('images/default.jpg'); // Default image path
+            $table->string('SellerID');
+
+            
             $table->timestamps();
         });
     }

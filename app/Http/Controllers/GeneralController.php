@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Seller;
 use App\Models\Datatoko;
 use App\Models\Categories;
-use App\Models\Seller;
+use Illuminate\Http\Request;
 
 class GeneralController extends Controller
 {
@@ -20,7 +20,7 @@ class GeneralController extends Controller
     public function create()
     {
     // Mengambil semua spesialisasi dari tabel datatoko
-    $logo = Datatoko::select('logo')->distinct()->get();
+    $logo = Datatoko::select('Logo')->distinct()->get();
     
     // Mengirim data logo ke view
     return view('nonlogin.home', compact('logo'));

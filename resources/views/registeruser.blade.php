@@ -77,7 +77,6 @@
 </head>
 <body>
     <div class="register-container">
-    <div class="register-container">
         <h1>Welcome to Mamura</h1>
         <form id="registerForm" method="POST" action="{{ url('/user/register') }}">
             @csrf <!-- Token CSRF Laravel untuk keamanan -->

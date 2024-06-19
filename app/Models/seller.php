@@ -2,16 +2,17 @@
 
 namespace App\Models;
 
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
+
+use App\Models\Datatoko;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class Seller extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
-    // Definisikan kolom yang bisa diisi secara massal
     protected $fillable = [
         'name',
         'email',
@@ -29,11 +30,11 @@ class Seller extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function admin()
+    public function Admin()
     {
         return $this->belongsTo(Admin::class);
     }
-    public function datatoko()
+    public function Datatoko()
     {
         return $this->hasMany(Datatoko::class);
     }    

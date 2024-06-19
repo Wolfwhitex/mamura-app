@@ -55,10 +55,20 @@ class SellerController extends Controller
         
         if (Auth::guard('seller')->attempt($credentials)) {
             // Autentikasi sukses, redirect ke halaman profil seller
-            return redirect()->intended('/seller/profile'); // Sesuaikan halaman setelah login
+            return redirect()->intended('/seller_page'); // Sesuaikan halaman setelah login
         }
 
         // Jika autentikasi gagal, kirim pesan kesalahan
         return redirect('/loginseller')->withErrors(['email' => 'Email atau password salah.']);
+    }
+    public function logoutseller(Request $request)
+    {
+        Auth::guard('seller')->logout(); // Log out the seller using the seller guard
+
+        $request->session()->invalidate(); // Invalidate the session
+
+        $request->session()->regenerateToken(); // Regenerate the CSRF token
+
+        return redirect('/loginseller'); // Redirect to the seller login page
     }
 }
