@@ -2,14 +2,32 @@
 
 namespace App\Models;
 
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 
-class seller extends Model
+class Seller extends Authenticatable
 {
-    use HasFactory;
-    protected $table = 'seller';
-    protected $fillable = ['Nama','Email','Password','AdminID'];
+    use HasApiTokens, HasFactory, Notifiable;
+
+    // Definisikan kolom yang bisa diisi secara massal
+    protected $fillable = [
+        'name',
+        'email',
+        'password',
+    ];
+
+    // Sembunyikan kolom tertentu saat model diubah menjadi array atau JSON
+    protected $hidden = [
+        'password',
+        'remember_token',
+    ];
+
+    // Menentukan kolom yang harus di-cast ke tipe data tertentu
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+    ];
 
     public function admin()
     {
@@ -18,5 +36,5 @@ class seller extends Model
     public function datatoko()
     {
         return $this->hasMany(Datatoko::class);
-    }
+    }    
 }

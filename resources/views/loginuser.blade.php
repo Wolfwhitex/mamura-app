@@ -76,45 +76,15 @@
 </head>
 <body>
     <div class="login-container">
-        <h1>Login to Mamura</h1>
-        <form id="loginForm">
+    <h1>Login User to Mamura</h1>
+        <form id="loginForm" method="POST" action="{{ url('/user/login') }}">
+            @csrf <!-- Token CSRF Laravel untuk keamanan -->
             <input type="email" id="email" name="email" placeholder="Email" required>
             <input type="password" id="password" name="password" placeholder="Password" required>
             <div id="error-message" class="error"></div>
             <button type="submit">Login</button>
         </form>
-        <p>Belum punya akun? <a href="{{ url('/register') }}">Daftar</a></p>
-    </div>
-
-    <script>
-        document.getElementById('loginForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-            const errorMessage = document.getElementById('error-message');
-
-            // Clear any previous error messages
-            errorMessage.textContent = '';
-
-            // Retrieve stored user data from localStorage
-            const storedUserData = localStorage.getItem('userData');
-            if (storedUserData) {
-                const userData = JSON.parse(storedUserData);
-
-                // Check if email and password match
-                if (email === userData.email && password === userData.password) {
-                    // If credentials are correct, redirect to cust_page.html
-                    alert('Login successful!');
-                    window.location.href = "{{ url('/cust_page') }}";
-                } else {
-                    // If credentials are incorrect, show error message
-                    errorMessage.textContent = "Email atau password salah";
-                }
-            } else {
-                errorMessage.textContent = "Tidak ada pengguna yang terdaftar dengan email ini";
-            }
-        });
-    </script>
+        <p>Belum punya akun? <a href="{{ url('/registeruser') }}">Register</a></p>
+        <p>Login Sebagai Seller <a href="{{ url('/loginseller') }}">Login Seller</a></p>
 </body>
 </html>

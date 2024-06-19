@@ -77,53 +77,17 @@
 </head>
 <body>
     <div class="register-container">
+    <div class="register-container">
         <h1>Welcome to Mamura</h1>
-        <form id="registerForm">
-            <input type="text" id="username" name="username" placeholder="Username" required>
+        <form id="registerForm" method="POST" action="{{ url('/user/register') }}">
+            @csrf <!-- Token CSRF Laravel untuk keamanan -->
+            <input type="text" id="name" name="name" placeholder="Name" required>
             <input type="email" id="email" name="email" placeholder="Email" required>
             <input type="password" id="password" name="password" placeholder="Password" required>
+            <input type="password" id="password_confirmation" name="password_confirmation" placeholder="Confirm Password" required>
             <div id="error-message" class="error"></div>
             <button type="submit">Register</button>
         </form>
-        <p>Sudah punya akun? <a href="{{ url('/login') }}">Login</a></p>
-    </div>
-
-    <script>
-        document.getElementById('registerForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            const username = document.getElementById('username').value;
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-            const errorMessage = document.getElementById('error-message');
-
-            // Clear any previous error messages
-            errorMessage.textContent = '';
-
-            // Simple validation rules
-            if (username.length < 3) {
-                errorMessage.textContent = 'Username harus lebih dari 3 karakter';
-                return;
-            }
-
-            if (password.length < 6) {
-                errorMessage.textContent = 'Password harus lebih dari 6 karakter';
-                return;
-            }
-
-            // Store user data in localStorage
-            const userData = {
-                username: username,
-                email: email,
-                password: password
-            };
-
-            localStorage.setItem('userData', JSON.stringify(userData));
-
-            // Redirect to login page after successful registration
-            alert('Registration successful!');
-            window.location.href = "{{ url('/login') }}";
-        });
-    </script>
+        <p>Sudah punya akun? <a href="{{ url('/loginuser') }}">Login</a></p>
 </body>
 </html>

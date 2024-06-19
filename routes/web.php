@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\SellerController;
 use App\Http\Controllers\GeneralController;
 /*
 |--------------------------------------------------------------------------
@@ -17,19 +19,30 @@ use App\Http\Controllers\GeneralController;
 //     return view('welcome');
 // });
 
-Route::get('/',[TemplateController::class,'index']);
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/login', function () {
-    return view('login');
+Route::get('/loginuser', function () {
+    return view('loginuser');
 });
+Route::post('/user/login', [UserController::class, 'loginuser']);
 
-Route::get('/register', function () {
-    return view('register');
+Route::get('/loginseller', function () {
+    return view('loginseller');
 });
+Route::post('/loginseller', [SellerController::class, 'loginseller']);
+
+Route::get('/registeruser', function () {
+    return view('registeruser');
+});
+Route::post('/user/register', [UserController::class, 'registeruser']);
+
+Route::get('/registerseller', function () {
+    return view('registerseller');
+});
+Route::post('/seller/register', [SellerController::class, 'registerseller']);
 
 // halaman non login
 Route::get('/home', function () {
