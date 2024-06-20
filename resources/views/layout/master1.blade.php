@@ -75,7 +75,7 @@
                 <a class="nav-link" href="{{ url('/histori') }}">Histori</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{{ url('/cust_profile') }}"> <i class="fa fa-user" aria-hidden="true"></i></a>
+                <a class="nav-link" href="{{ url('/profile') }}"> <i class="fa fa-user" aria-hidden="true"></i></a>
               </li>
             </ul>
           </div>

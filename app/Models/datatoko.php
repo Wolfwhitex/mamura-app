@@ -14,4 +14,16 @@ class Datatoko extends Model
     {
         return $this->belongsTo(Seller::class);
     }
+    public function order()
+    {
+        return $this->hasMany(Order::class);
+    }
+    public function Products()
+    {
+        return $this->hasMany(Products::class);
+    }
+    public function review()
+    {
+        return $this->hasMany(Review::class);
+    }
 }

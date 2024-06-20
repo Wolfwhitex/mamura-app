@@ -15,7 +15,23 @@ class Products extends Model
         'Nama',
         'Deskripsi',
         'Harga',
-        'Stock',
+        'Stok',
         'FotoProduk',
     ];
+    public function cart()
+    {
+        return $this->hasMany(Cart::class);
+    }
+    public function categories()
+    {
+        return $this->belongsTo(Categories::class);
+    }
+    public function datatoko()
+    {
+        return $this->belongsTo(Datatoko::class);
+    }
+    public function review()
+    {
+        return $this->hasMany(Review::class);
+    }
 }

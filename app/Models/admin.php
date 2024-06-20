@@ -11,8 +11,17 @@ class Admin extends Model
     protected $table = 'Admin';
     protected $fillable = ['Nama','Email','Password'];
 
+    protected $hidden = [
+        'Password',
+        'remember_token',
+    ];
+
     public function seller()
     {
         return $this->hasMany(Seller::class);
+    }
+    public function payment()
+    {
+        return $this->hasMany(Payment::class);
     }
 }

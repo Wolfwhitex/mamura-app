@@ -12,11 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('datatokos', function (Blueprint $table) {
-            $table->id();
+            $table->id('TokoID');
             $table->string('Nama_Toko');
             $table->string('Alamat');
             $table->string('Logo')->default('images/default.jpg'); // Default image path
-            $table->string('SellerID');
+            $table->string('SellerID')->constrained()->cascadeOnDelete();
 
             
             $table->timestamps();

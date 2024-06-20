@@ -64,9 +64,9 @@ h1 {
         <h1>Profil Saya</h1>
 
         <div class="profile-info">
-            <p>Nama: <span id="customerName"></span></p>
-            <p>Email: <span id="customerEmail"></span></p>
-            <p>Nomor Telepon: <span id="customerPhone"></span></p>
+            <p>Nama: Luna <span id="customerName"></span></p>
+            <p>Email: Luna Maya <span id="customerEmail"></span></p>
+            <p>Nomor Telepon: 0812345678 <span id="customerPhone"></span></p>
         </div>
 
         <h2>Riwayat Pesanan</h2>

@@ -11,17 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('sellers', function (Blueprint $table) {
-            $table->id('SellerID');
-            $table->string('Nama');
-            $table->string('Email')->unique();
-            $table->string('NoTelp');
-            $table->string('Password');
+        Schema::create('payments', function (Blueprint $table) {
+            $table->id('PaymentID');
+            $table->string('OrderID')->constrained()->cascadeOnDelete();
+            $table->timestamp('PaymentDate');
+            $table->decimal('Amount', 10, 2);
             $table->string('AdminID')->constrained()->cascadeOnDelete();
-            $table->rememberToken();
-            $table->timestamps();
+            
+            // $table->timestamps();
         });
-
     }
 
     /**
@@ -29,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('sellers');
+        Schema::dropIfExists('payments');
     }
 };

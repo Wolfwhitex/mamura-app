@@ -11,11 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('categories', function (Blueprint $table) {
-            $table->id('KategoriID');
+        Schema::create('customers', function (Blueprint $table) {
+            $table->id('CustomerID');
             $table->string('Nama');
-            $table->string('Foto')->default('images/default.jpg');
-            $table->string('Deskripsi');
+            $table->string('Email');
+            $table->string('NoTelpon');
+            $table->string('Password');
             $table->timestamps();
         });
     }
@@ -25,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('categories');
+        Schema::dropIfExists('customers');
     }
 };

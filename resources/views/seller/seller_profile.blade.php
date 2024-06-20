@@ -141,7 +141,7 @@
 
        <div class="profile-info">
     @if(Auth::guard('seller')->check())
-        <p>Nama: {{ Auth::user()->name }}</p>
+        <p>Nama: {{ Auth::user()->nama }}</p>
         <p>Email: {{ Auth::user()->email }}</p>
         <p>No Telepon: {{ Auth::user()->NoTelp }}</p>
     @endif

@@ -11,11 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('categories', function (Blueprint $table) {
-            $table->id('KategoriID');
-            $table->string('Nama');
-            $table->string('Foto')->default('images/default.jpg');
-            $table->string('Deskripsi');
+        Schema::create('carts', function (Blueprint $table) {
+            $table->id('CartID');
+            $table->string('CustomerID')->constrained()->cascadeOnDelete();
+            $table->string('ProductID')->constrained()->cascadeOnDelete();
+            $table->integer('Jumlah');
+
             $table->timestamps();
         });
     }
@@ -25,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('categories');
+        Schema::dropIfExists('carts');
     }
 };

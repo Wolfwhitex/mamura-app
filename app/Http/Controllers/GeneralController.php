@@ -20,7 +20,7 @@ class GeneralController extends Controller
     public function create()
     {
     // Mengambil semua spesialisasi dari tabel datatoko
-    $logo = Datatoko::select('Logo')->distinct()->get();
+    $logo = Datatoko::select('logo')->distinct()->get();
     
     // Mengirim data logo ke view
     return view('nonlogin.home', compact('logo'));

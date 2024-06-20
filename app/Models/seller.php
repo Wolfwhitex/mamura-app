@@ -31,11 +31,11 @@ class Seller extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function Admin()
+    public function admin()
     {
         return $this->belongsTo(Admin::class);
     }
-    public function Datatoko()
+    public function datatoko()
     {
         return $this->hasMany(Datatoko::class);
     }    

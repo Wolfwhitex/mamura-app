@@ -17,7 +17,9 @@ return new class extends Migration
             $table->text('Deskripsi')->nullable();
             $table->decimal('Harga', 10, 2);
             $table->string('FotoProduk', 255)->nullable();
-            $table->integer('Stock');
+            $table->integer('Stok');
+            $table->string('KategoriID')->constrained()->cascadeOnDelete();
+            $table->string('TokoID')->constrained()->cascadeOnDelete();
             $table->timestamp('CreatedAt')->useCurrent();
             $table->timestamp('UpdatedAt')->useCurrent()->useCurrentOnUpdate();
             $table->timestamps();
